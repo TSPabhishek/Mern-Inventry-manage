@@ -30,7 +30,23 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application for inventory m
 ## Installation Steps
 
 ### Step 1: Clone the Project
+### Step 2: Set Up MongoDB Atlas
+Go to "Databases" and click "Connect"
+Select "Connect your application"
+Copy your connection string (format: mongodb+srv://username:password@cluster.mongodb.net/dbname)
+Replace username, password, and dbname with your credentials
 
-```bash
-git clone https://github.com/your-username/Inventry-Auth-Mern.git
-cd Inventry-Auth-Mern
+### Step 3: Configure Backend Environment
+PORT=5000
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/inventory
+JWT_SECRET=your_secret_key_here
+
+### Step 4: Install Backend Dependencies
+cd Backend
+npm install
+npm run dev
+
+### Step 5: Install Frontend Dependencies
+cd frontend
+npm install
+npm start
