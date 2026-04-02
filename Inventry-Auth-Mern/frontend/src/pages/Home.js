@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
@@ -47,7 +47,7 @@ function Home() {
     }
 
     // Fetch Products
-    const fetchProducts = async () => {
+    const fetchProducts = useCallback(async () => {
         setLoading(true);
         try {
             let url = `http://localhost:5000/products?page=${page}&limit=3`;
@@ -83,7 +83,7 @@ function Home() {
         } finally {
             setLoading(false);
         }
-    }
+    }, [page, search, selectedCategory])
 
     // Load categories on mount
     useEffect(() => {
@@ -93,7 +93,7 @@ function Home() {
     // Load products when filters change
     useEffect(() => {
         fetchProducts();
-    }, [search, selectedCategory, page])
+    }, [fetchProducts])
 
     return (
         <div className='home-container'>
