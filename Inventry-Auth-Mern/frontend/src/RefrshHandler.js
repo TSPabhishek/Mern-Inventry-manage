@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function RefrshHandler({ setIsAuthenticated }) {
     const location = useLocation();
@@ -15,7 +15,7 @@ function RefrshHandler({ setIsAuthenticated }) {
                 navigate('/home', { replace: false });
             }
         }
-    }, [location, navigate, setIsAuthenticated])
+    }, [location.pathname, navigate, setIsAuthenticated])
 
     return (
         null
