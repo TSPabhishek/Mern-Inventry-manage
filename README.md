@@ -50,3 +50,6 @@ npm run dev
 cd frontend
 npm install
 npm start
+
+
+Live vid : https://drive.google.com/file/d/1fHcm9dzqTGs-H59RDSnJyaDIoBhlT-gs/view?usp=sharing
